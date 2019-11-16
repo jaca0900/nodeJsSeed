@@ -8,7 +8,9 @@
     "build": "tsc",
     "start": "node dist/app.js",
     "compileAndRun": "tsc && node dist/app.js",
-    "test": "mocha --require ts-node/register ./src/**/*.spec.ts"
+    "test": "mocha --require ts-node/register ./src/**/*.spec.ts",
+    "compose:db": "cd DB && docker-compose up -d",
+    "create:db": "docker exec -i db_mysql-development_1 mysql -uroot -proot  < DB/CompanyManager.sql"
   },
   "author": "Jacek ",
   "license": "ISC",
